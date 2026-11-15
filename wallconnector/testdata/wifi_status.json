@@ -1,0 +1,10 @@
+{
+  "wifi_ssid": "ZXhhbXBsZS1uZXR3b3Jr",
+  "wifi_signal_strength": 60,
+  "wifi_rssi": -58,
+  "wifi_snr": 35,
+  "wifi_connected": true,
+  "wifi_infra_ip": "192.0.2.10",
+  "internet": true,
+  "wifi_mac": "00:00:5E:00:53:01"
+}

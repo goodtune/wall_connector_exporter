@@ -1,0 +1,40 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    name: Go unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+
+      - name: Run format check, vet, tests and build
+        run: make all
+
+      - name: Verify binary runs
+        run: ./wall_connector_exporter --version
+
+      - name: Verify packaged systemd unit
+        run: |
+          sudo install -m 0755 ./wall_connector_exporter /usr/bin/wall_connector_exporter
+          sudo install -D -m 0644 packaging/environment /etc/wall_connector_exporter/environment
+          sudo install -D -m 0644 packaging/config.yml /etc/wall_connector_exporter/config.yml
+          systemd-analyze verify packaging/systemd/wall_connector_exporter.service
+
+      - name: Check GoReleaser configuration
+        uses: goreleaser/goreleaser-action@v7
+        with:
+          version: latest
+          args: check

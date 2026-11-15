@@ -1,0 +1,7 @@
+{
+  "firmware_version": "1.2.3+g0123456789abcd",
+  "git_branch": "HEAD",
+  "part_number": "0000000-00-A",
+  "serial_number": "EXAMPLE0000001",
+  "web_service": "service.example.com"
+}

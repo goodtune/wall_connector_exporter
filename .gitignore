@@ -1,0 +1,6 @@
+/wall_connector_exporter
+/.build/
+/.tarballs/
+/dist/
+*.test
+*.out

@@ -1,0 +1,9 @@
+# Example Prometheus configuration for wall_connector_exporter.
+
+scrape_configs:
+  - job_name: wall_connector
+    # The exporter polls a charger not more than one time in 10 seconds.
+    # A shorter scrape interval does not give newer data.
+    scrape_interval: 15s
+    static_configs:
+      - targets: ["localhost:10064"]

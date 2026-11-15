@@ -1,0 +1,6 @@
+# Environment of wall_connector_exporter.service.
+
+# Flags for the exporter. Run "wall_connector_exporter --help" to see them.
+# The unit sets --config.file=/etc/wall_connector_exporter/config.yml.
+# Example: WALL_CONNECTOR_EXPORTER_ARGS=--wall-connector.poll-interval=30s
+WALL_CONNECTOR_EXPORTER_ARGS=

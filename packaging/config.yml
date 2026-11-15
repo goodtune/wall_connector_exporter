@@ -1,0 +1,16 @@
+# Chargers that wall_connector_exporter polls.
+#
+# The exporter does not start while this list is empty. Add your chargers,
+# then start the service:
+#   systemctl enable --now wall_connector_exporter.service
+#
+# Example:
+#
+# devices:
+#   - name: garage
+#     address: 192.0.2.10
+#
+# For all settings, see
+# https://github.com/goodtune/wall_connector_exporter#configuration-file
+
+devices: []

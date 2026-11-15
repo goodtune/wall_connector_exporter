@@ -1,0 +1,7 @@
+FROM gcr.io/distroless/static-debian12:nonroot
+ARG TARGETPLATFORM
+COPY ${TARGETPLATFORM}/wall_connector_exporter /wall_connector_exporter
+EXPOSE 10064
+# Give the charger with --wall-connector.address, or mount a configuration
+# file and give it with --config.file.
+ENTRYPOINT ["/wall_connector_exporter"]
